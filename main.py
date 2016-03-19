@@ -1,10 +1,8 @@
 from twilio.rest import TwilioRestClient
 from flask import *
 from os import *
-from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
-Bootstrap(app)
 
 #Twilio API
 number_from = environ.get('TWILIO_NUMBER_FROM', None)
