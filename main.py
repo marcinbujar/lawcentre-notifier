@@ -1,8 +1,11 @@
+#SMS notification system
+
 from twilio.rest import TwilioRestClient
 from flask import *
 from os import *
 
 app = Flask(__name__)
+
 
 #Twilio API
 number_from = environ.get('TWILIO_NUMBER_FROM', None)
@@ -14,6 +17,8 @@ client = TwilioRestClient(account_sid, auth_token)
 
 #Test data
 clients = [ {'case': 1087, 'name': 'John Smith', 'number': number_to} , {'case': 1480, 'name': 'Pocahontas'} ]
+
+
 
 @app.route("/")
 def main():
@@ -39,6 +44,7 @@ def notify():
 def sms(number, msg):
     print("number: " + number + " | msg: " + msg)
     message = client.messages.create(to=number, from_=number_from, body=msg)
+
 
 
 if __name__ == "__main__":
