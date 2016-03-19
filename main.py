@@ -13,7 +13,7 @@ client = TwilioRestClient(account_sid, auth_token)
 
 
 #Test data
-clients = [ {'case': 1087, 'name': 'John Smith', 'number': number_to} , {'case': 1480, 'name': 'Pocahontas'} ]
+clients = [{'case': 1087, 'name': 'John Smith', 'number': number_to},{'case': 1480, 'name': 'Pocahontas'} ]
 
 @app.route("/")
 def main():
