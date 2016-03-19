@@ -2,31 +2,62 @@
 
 <head>
 <title>HCLC SMS system</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
 
+
+<div class="container-fluid">
+
+<div class="col-md-4 col-md-offset-2">
+
+			<div> 
+              <img width=70% src="http://www.hclc.org.uk/wp-content/uploads/2016/01/HKC_LC_RGB.jpeg">
+            </div>
+
+<h2> SMS Notification System</h2>
+
+<div class="form-group">
+
 <form action="/notify" method="post">
-    Select client:<br>
-    <select name="contact">
+
+
+    Select client(s):<br>
+    <select multiple class="form-control" name="contact">
         <option value="1">Case#: 1003, John Smith - Housing Benefit</option>
         <option value="2">Case#: 1487, Pocahontas - Asylum Claim</option>
     </select>
 <br><br>
 Select notification type:<br>
-    <select name="msg_type">
+    <select class="form-control" name="msg_type">
         <option value="remind">Appointment Reminder</option>
     </select>
 <br><br>
-Documents to bring:
+Document(s) to bring:
 <br>
-<input type="radio" name="doc" value="id"> ID<br>
-<input type="radio" name="doc" value="address"> Proof of address<br>
-<input type="radio" name="doc" value="birth"> Birth certificate<br>
-<input type="radio" name="doc" value="all" checked> All of the above
-<br><br>
-<input type="submit" value="Send SMS Notification">
-</form>
+<div class="checkbox">
+	<label>
+		<input type="checkbox" name="doc" value="id"> ID<br>
+		<input type="checkbox" name="doc" value="address"> Proof of address<br>
+		<input type="checkbox" name="doc" value="birth"> Birth certificate<br>
+		<input type="checkbox" name="doc" value="all" checked> All of the above
+		<br><br>
+	</label>
+</div>
 
+	<label>
+		<input type="submit" class="btn btn-success" value="Send SMS Notification">
+	</label>
+
+</form>
+</div>
+
+
+
+</div>
 </body>
 </html>
