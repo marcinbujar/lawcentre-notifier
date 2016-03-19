@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<title>HCLC SMS system</title>
+</head>
+
+<body>
+
+<form action="/notify" method="post">
+    Select client:<br>
+    <select name="contact">
+        <option value="1">Case#: 1003, John Smith - Housing Benefit</option>
+        <option value="2">Case#: 1487, Pocahontas - Asylum Claim</option>
+    </select>
+<br><br>
+Select notification type:<br>
+    <select name="msg_type">
+        <option value="remind">Appointment Reminder</option>
+    </select>
+<br><br>
+Documents to bring:
+<br>
+<input type="radio" name="doc" value="id"> ID<br>
+<input type="radio" name="doc" value="address"> Proof of address<br>
+<input type="radio" name="doc" value="birth"> Birth certificate<br>
+<input type="radio" name="doc" value="all" checked> All of the above
+<br><br>
+<input type="submit" value="Send SMS Notification">
+</form>
+
+</body>
+</html>
